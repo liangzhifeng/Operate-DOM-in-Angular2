@@ -5,7 +5,7 @@
 
 那就试试以下几种方法吧：
 
-#一、          通过Angular2获取原生DOM元素, 在获取DOM元素后，你就可以愉快地直接操作DOM或者修改Style了
+# 一、          通过Angular2获取原生DOM元素, 在获取DOM元素后，你就可以愉快地直接操作DOM或者修改Style了
 
 import {ElementRef} from '@angular/core';
    constructor(private el: ElementRef) {}
@@ -22,7 +22,7 @@ this.el.nativeElement.querySelector('#test’).style // 字符串操作或proper
 this.el.nativeElement.querySelector('#test’).className  // class赋值
 this.el.nativeElement.querySelector('#test’).classList  // 支持removeClass和addClass 使用起来比较方便，跟jQuery的addClass removeClass一样好用。
 
-#三 、     使用DomSanitizer
+# 三 、     使用DomSanitizer
 
 有些场景css是动态变化的，跟业务逻辑的变量相关，这时无法在CSS文件中定义了。
 import {DomSanitizer} from '@angular/platform-browser';
