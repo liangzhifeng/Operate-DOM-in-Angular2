@@ -1,6 +1,7 @@
 # Operate-DOM-in-Angular2
 
 实际Angular2项目中，大部分场景下都能很好利用双向绑定满足HTML元素的更新，
+
 少部分场景需要直接操作DOM或动态修改Style，这时常规的插值、绑定、ngStyle和ngClass等手段可能满足不了你的需求。
 
 那就试试以下几种方法吧：
@@ -25,6 +26,7 @@ this.el.nativeElement.querySelector('#test’).classList  // 支持removeClass�
 # 三 、     使用DomSanitizer
 
 有些场景css是动态变化的，跟业务逻辑的变量相关，这时无法在CSS文件中定义了。
+
 import {DomSanitizer} from '@angular/platform-browser';
 constructor(private _sanitizer: DomSanitizer) {}
  getTemperatureImageStyle(node){
@@ -57,7 +59,9 @@ sanitizer.bypassSecurityTrustResourceUrl(rurl);
  #  四 、放大招jQuery
 
 jQuery可以作为没有好办法时的办法，用法很简单
+
 import * as $ from "jquery";
 
 如果不是不得不引入了第三方jQuery插件，不建议在Angular中直接使用jQuery，特别是Mobile项目不建议用。
+
 在Mobile项目中我们要慎重考虑引入几十K库带来的性能影响。
