@@ -63,9 +63,13 @@ Angular设计的确很友好，默认开启了防XSS攻击，我们在HTML中给
   这时为了使Angular知道我们的变量是安全的，就需要使用Angular提供的DomSanitizer Service，一共有以下API
 
 sanitizer.bypassSecurityTrustHtml(html);
+
 sanitizer.bypassSecurityTrustScript(script);
+
 sanitizer.bypassSecurityTrustStyle(style);
+
 sanitizer.bypassSecurityTrustUrl(url);
+
 sanitizer.bypassSecurityTrustResourceUrl(rurl);
 
 
