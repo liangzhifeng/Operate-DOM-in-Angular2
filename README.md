@@ -32,17 +32,25 @@ this.el.nativeElement.querySelector('#test’).classList  // 支持removeClass�
 有些场景css是动态变化的，跟业务逻辑的变量相关，这时无法在CSS文件中定义了。
 
 import {DomSanitizer} from '@angular/platform-browser';
+
 constructor(private _sanitizer: DomSanitizer) {}
+
  getTemperatureImageStyle(node){
+ 
     return this._sanitizer.bypassSecurityTrustStyle("color:#f7f2f2; position:absolute;left:" + node.x + "%;top:" + node.y + "%;transform:translate(-" + node.x + "%,-" + node.y + "%)");
+    
 }
 
 HTML中:   
 
 <div *ngFor="let node of irTemperatureList">
+
 <div  [style]="getTemperatureImageStyle(node)">
+
   {{node.temperature}}
+  
   <i class="tip"></i>
+  
 </div>
 
 
