@@ -9,9 +9,11 @@
 # 一、          通过Angular2获取原生DOM元素, 在获取DOM元素后，你就可以愉快地直接操作DOM或者修改Style了
 
 import {ElementRef} from '@angular/core';
+
    constructor(private el: ElementRef) {}
 
    this.el.nativeElement.querySelector('#test’)  // 获取当前Angular组件的后代元素中第一个id为test元素, 如不存在返回null
+   
    this.el.nativeElement.querySelectorAll('.test')  // 获取获取当前Angular组件的后代元素所有class为test元素, 如不存在返回空的NodeList对象
 
 注意：该选择器是在当前组件的后代元素中寻找，与jQuery的选择器$(‘cssSelector’)是不同的。
@@ -20,7 +22,9 @@ import {ElementRef} from '@angular/core';
 
 # 二、          通过nativeElement修改Style
 this.el.nativeElement.querySelector('#test’).style // 字符串操作或property赋值 
+
 this.el.nativeElement.querySelector('#test’).className  // class赋值
+
 this.el.nativeElement.querySelector('#test’).classList  // 支持removeClass和addClass 使用起来比较方便，跟jQuery的addClass removeClass一样好用。
 
 # 三 、     使用DomSanitizer
@@ -34,6 +38,7 @@ constructor(private _sanitizer: DomSanitizer) {}
 }
 
 HTML中:   
+
 <div *ngFor="let node of irTemperatureList">
 <div  [style]="getTemperatureImageStyle(node)">
   {{node.temperature}}
