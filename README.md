@@ -42,7 +42,8 @@ HTML中:
     <div *ngFor="let node of irTemperatureList">
         <div  [style]="getTemperatureImageStyle(node)">
            {{node.temperature}}
-        <i class="tip"></i>
+           <i class="tip"></i>
+        </div>
     </div>
 
 Angular设计的确很友好，默认开启了防XSS攻击，我们在HTML中给style注入变量，Angular可能会报类似下面的错误/警告：
